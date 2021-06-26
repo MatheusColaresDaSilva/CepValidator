@@ -1,80 +1,80 @@
 <?php
 use PHPUnit\Framework\TestCase;
-require_once(__DIR__.'\..\src\Cep.php');
+require_once(__DIR__.'\..\src\Cidade.php');
 
-    final class CepTest extends TestCase {
+    final class CidadeTest extends TestCase {
         
         public function testEvaluateNumberOutOfRange():void{
-            $cep = new Cep();
+            $cidade = new Cidade();
 
             $this->assertFalse(
-                $cep->isCepBetweenValidNumber(99999)
+                $cidade->isCepBetweenValidNumber(99999)
             );
 
             $this->assertFalse(
-                $cep->isCepBetweenValidNumber(100000)
+                $cidade->isCepBetweenValidNumber(100000)
             );
 
             $this->assertFalse(
-                $cep->isCepBetweenValidNumber(999999)
+                $cidade->isCepBetweenValidNumber(999999)
             );
 
             $this->assertFalse(
-                $cep->isCepBetweenValidNumber(1000000)
+                $cidade->isCepBetweenValidNumber(1000000)
             );
         }
 
         public function testEvaluateNumberOnRange():void {
-            $cep = new Cep();
+            $cidade = new Cidade();
 
             $this->assertTrue(
-                $cep->isCepBetweenValidNumber(100001)
+                $cidade->isCepBetweenValidNumber(100001)
             );
 
             $this->assertTrue(
-                $cep->isCepBetweenValidNumber(500000)
+                $cidade->isCepBetweenValidNumber(500000)
             );
 
             $this->assertTrue(
-                $cep->isCepBetweenValidNumber(999998)
+                $cidade->isCepBetweenValidNumber(999998)
             );
         }
 
         public function testEvaluateAlternatedNumber():void {
-            $cep = new Cep();
+            $cidade = new Cidade();
 
             $this->assertTrue(
-                $cep->isCepAlternateNumberRepeated(121426)
+                $cidade->isCepAlternateNumberRepeated(121426)
             ); 
 
             $this->assertFalse(
-                $cep->isCepAlternateNumberRepeated(523563)
+                $cidade->isCepAlternateNumberRepeated(523563)
             ); 
 
             $this->assertTrue(
-                $cep->isCepAlternateNumberRepeated(552523)
+                $cidade->isCepAlternateNumberRepeated(552523)
             ); 
         }
 
         public function testCepInvalidAlternatedNumber():void {
             $this->expectException(InvalidArgumentException::class);
-            $cep = new Cep();
-            $cep->insertCep(552523);
+            $cidade = new Cidade();
+            $cidade->insertCep(552523);
         }
 
         public function testCepInvalidOutOfRange():void {
             $this->expectException(InvalidArgumentException::class);
-            $cep = new Cep();
-            $cep->insertCep(999999);
+            $cidade = new Cidade();
+            $cidade->insertCep(999999);
         }
 
         public function testCepValid():void {
-            $cep = new Cep();
-            $cep->insertCep(523563);
+            $cidade = new Cidade();
+            $cidade->insertCep(523563);
 
             $this->assertEquals(
                 523563,
-                $cep->getCodigo()
+                $cidade->getCep()
             );
         }
     }

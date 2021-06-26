@@ -1,16 +1,25 @@
 <?php
-    class Cep {
+    class Cidade {
         const MIN_VALUE = 100000;   
         const MAX_VALUE = 999999;
 
-        private $codigo;
+        private $cidade;
+        private $cep;
 
-        public function getCodigo(){
-           return $this->codigo;
+        public function getCidade(){
+            return $this->cidade;
+          }
+ 
+         private function setCidade($cidade){
+            $this->cidade = $cidade;
          }
 
-        private function setCodigo($codigo){
-           $this->codigo = $codigo;
+        public function getCep(){
+           return $this->cep;
+         }
+
+        private function setCep($cep){
+           $this->cep = $cep;
         }
 
         public function isCepBetweenValidNumber($cep) {
@@ -31,7 +40,7 @@
 
         public function insertCep($cep) {
             if(self::isCepBetweenValidNumber($cep) && !self::isCepAlternateNumberRepeated($cep)) {
-                return self::setCodigo($cep);
+                return self::setCep($cep);
             }
 
             throw new InvalidArgumentException('Cep Invalido',100);
