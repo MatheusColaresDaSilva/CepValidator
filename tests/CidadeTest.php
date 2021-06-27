@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-require_once(__DIR__.'\..\src\Cidade.php');
+require_once(__DIR__.'\..\src\model\Cidade.php');
 
     final class CidadeTest extends TestCase {
         
