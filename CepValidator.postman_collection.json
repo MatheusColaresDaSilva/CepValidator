@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "22017443-0d7c-46e5-8831-e114f0460078",
+		"name": "CepValidator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "descricao",
+						"value": "Nois",
+						"type": "text"
+					},
+					{
+						"key": "cep",
+						"value": "12356",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Londrina\",\r\n    \"cep\": 998999\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/validadorCep/src/api/cidade/create.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"validadorCep",
+						"src",
+						"api",
+						"cidade",
+						"create.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "descricao",
+						"type": "text",
+						"value": "Nois"
+					},
+					{
+						"key": "cep",
+						"type": "text",
+						"value": "12356"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Maringa\",\r\n    \"cep\": 999999\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/validadorCep/src/api/cidade/read.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"validadorCep",
+						"src",
+						"api",
+						"cidade",
+						"read.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
