@@ -12,6 +12,6 @@ Foi utilizado PHP para criação da API.
 Para executar:
 1. Instale um serve php, por exemplo o xampp com o apache e mysql
 2. Baixe o projeto e coloque no diretório correto
-3.-Execute o arquivos src\database\CreateDatabase.php e src\database\CreateTableCidade.php respectivamente.
-4.-Abra o postman e import as requisições : CepValidator.postman_collection.json
-5.-Insira e valide os bloqueios
+3. Execute o arquivos src\database\CreateDatabase.php e src\database\CreateTableCidade.php respectivamente.
+4. Abra o postman e import as requisições : CepValidator.postman_collection.json
+5. Insira e valide os bloqueios
