@@ -11,7 +11,7 @@ export const Actions = () => {
         return res.json();
       })
       .then((data) => {
-        if (data) {
+        if (data.records) {
           setUsers(data.records.reverse());
           setUserLength(true);
         } else {
