@@ -5,6 +5,7 @@
         private $conn;
         private $table_name = "cidade";
 
+        public $id;
         private $nome;
         private $cep;
 
@@ -83,6 +84,7 @@
             $stmt->bindParam(":cep", $this->cep);
           
             if($stmt->execute()){
+                $this->id = $this->conn->lastInsertId();
                 return true;
             }
           

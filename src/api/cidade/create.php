@@ -1,11 +1,17 @@
 <?php
 // required headers
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-  
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method,Access-Control-Request-Headers, Authorization");
+header('Content-Type: application/json');
+
+if ($_SERVER['REQUEST_METHOD'] == "OPTIONS") {
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method,Access-Control-Request-Headers, Authorization");
+    header("HTTP/1.1 200 OK");
+    die();
+}
+
 // get database connection
 include_once '../../database/Database.php';
 include_once '../../model/Cidade.php';
@@ -26,14 +32,18 @@ if(!($_SERVER['REQUEST_METHOD'] == 'POST')) {
 
 if( !empty($data->nome) &&
     !empty($data->cep)) {
-    
+              
     try {
         $cidade->setNome($data->nome);
         $cidade->insertCep($data->cep);
 
         if($cidade->create()){
             http_response_code(201);
-            echo json_encode(array("message" => "Cidade created with sucess."));
+
+            echo json_encode(array("message" => "Cidade created with sucess.",
+                                    "id" => $cidade->id,
+                                    "nome" => $cidade->getNome(),
+                                    "cep" => $cidade->getCep()));
         } else{
             http_response_code(503);
             echo json_encode(array("message" => "Unable to create cidade."));

@@ -10,13 +10,6 @@ const CidadeList = () => {
   // Storing users new data when they editing their info.
   const [newData, setNewData] = useState({});
 
-  const updateNewData = (e, field) => {
-    setNewData({
-      ...newData,
-      [field]: e.target.value,
-    });
-  };
-
   return !userLength ? (
     <p>{userLength === null ? "Carregando..." : "Por favor, insira alguma cidade."}</p>
   ) : (

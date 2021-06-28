@@ -27,7 +27,7 @@ const Form = () => {
       <input
         type="text"
         id="_nome"
-        onChange={(e) => addNewUser(e, "ci_nome")}
+        onChange={(e) => addNewUser(e, "nome")}
         placeholder="Nome Cidade"
         autoComplete="off"
         required
@@ -36,7 +36,7 @@ const Form = () => {
       <input
         type="text"
         id="_cep"
-        onChange={(e) => addNewUser(e, "ci_cep")}
+        onChange={(e) => addNewUser(e, "cep")}
         placeholder="Insira o Cep"
         autoComplete="off"
         required

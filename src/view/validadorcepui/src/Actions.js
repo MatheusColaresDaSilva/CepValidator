@@ -23,36 +23,18 @@ export const Actions = () => {
       });
   }, []);
 
-  const insertUser = (newUser) => {
-      
-    axios.defaults.baseURL = 'http://localhost/validadorCep/src/api/cidade/create.php';
-    axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
-    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-    axios.post('http://localhost/validadorCep/src/api/cidade/create.php')
-    .then(resp => {
-    console.log("Funcionou");
-    })
-    .catch(error => {
-    console.log(error);
-    })
+ const insertUser = (newUser) => {
 
-/*
     fetch("http://localhost/validadorCep/src/api/cidade/create.php", {
       method: "POST",
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, GET",
-        "Access-Control-Allow-Headers": "*",
-        "Access-Control-Max-Age": "86400",
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(newUser),
-    })
-      .then((res) => {
+    }).then((res) => {
         console.log(res);
         return res.json();
-      })
-      .then((data) => {
+      }).then((data) => {
         if (data.id) {
           setUsers([
             {
@@ -63,12 +45,12 @@ export const Actions = () => {
           ]);
           setUserLength(true);
         } else {
-          alert(data.msg);
+         alert(data.message);
         }
       })
       .catch((err) => {
         console.log(err);
-      });*/
+      });
   };
 
   return {
