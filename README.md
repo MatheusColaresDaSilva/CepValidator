@@ -9,9 +9,15 @@ Regras:
 • 552523 # Aqui os números 2 e 5 são dígitos alternados repetitivos em par.
 
 Foi utilizado PHP para criação da API.
-Para executar:
+Para executar back-end:
 1. Instale um serve php, por exemplo o xampp com o apache e mysql
 2. Baixe o projeto e coloque no diretório correto
 3. Execute o arquivos src\database\CreateDatabase.php e src\database\CreateTableCidade.php respectivamente.
 4. Abra o postman e import as requisições : CepValidator.postman_collection.json
 5. Insira e valide os bloqueios
+
+Para executar front-end:
+1. Execute o comando "npm start" dentro do projeto view*
+
+
+Obs: inserção via tela ainda não está funcionando.
