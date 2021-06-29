@@ -1,5 +1,6 @@
+
+
 import { useEffect, useState } from "react";
-import axios from 'axios';
 
 export const Actions = () => {
   let [users, setUsers] = useState([]);
@@ -32,7 +33,6 @@ export const Actions = () => {
       },
       body: JSON.stringify(newUser),
     }).then((res) => {
-        console.log(res);
         return res.json();
       }).then((data) => {
         if (data.id) {

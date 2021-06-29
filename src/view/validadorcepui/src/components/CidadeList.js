@@ -22,9 +22,9 @@ const CidadeList = () => {
       </thead>
       <tbody>
         {users.map(function (element) {
-                     return <tr key={element["ci_id"]}>
-                     <td>{element["ci_nome"]}</td>
-                     <td>{element["ci_cep"]}</td>
+                     return <tr key={element["id"]}>
+                     <td>{element["nome"]}</td>
+                     <td>{element["cep"]}</td>
                    </tr>;
                   })}
       </tbody>

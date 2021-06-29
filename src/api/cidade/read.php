@@ -26,9 +26,9 @@ if($num>0){
         extract($row);
 
         $cidades_item=array(
-            "ci_id" => $ci_id,
-            "ci_nome" => $ci_nome,
-            "ci_cep" => $ci_cep
+            "id" => $ci_id,
+            "nome" => $ci_nome,
+            "cep" => $ci_cep
         );
   
         array_push($cidades_arr["records"], $cidades_item);
