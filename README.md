@@ -29,7 +29,5 @@ Para executrar os TESTES é necessário ter o PhpUnit instalado (https://phpunit
 
 Para o front-end é necessário ter o nod.js instalado(https://nodejs.org/en/), entra na pasta "validadorCep\src\view\validadorcepui":
 1. Dentro dessa pasta execute "npm start", uma página do navegador irá abrir com a página do projeto.
-2. No momento a tela está do aparecendo a lista de cidades.
 
 
-Obs: Inserção via tela ainda não está funcionando. Há um bloquei de CORS que ainda não consegui resolver.
